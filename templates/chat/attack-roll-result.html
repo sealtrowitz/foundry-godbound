@@ -29,10 +29,10 @@
             <div>{{{roll}}}</div>
             {{#if result.isCheckedForSuccess}}
                 {{#if result.isFailure}}
-                <div class='roll-result roll-fail'><b>Miss</b></div>
+                <div class='roll-result roll-fail'><b>Miss! (Target was {{result.target}}, AKA 20 minus your <i>targetted token's AC</i>, which maths out the same, but looks different because coding the roll itself to call the targetted token's AC is a lot harder than making the roll target do it.)</b></div>
                 {{/if}}
                 {{#if result.isSuccess}}
-                <div class='roll-result roll-success'><b>Hit</b></div>
+                <div class='roll-result roll-success'><b>Hit! (Target was {{result.target}}, AKA 20 minus your <i>targetted token's AC</i>, which maths out the same, but looks different because coding the roll itself to call the targetted token's AC is a lot harder than making the roll target do it.)</b></div>
                 {{/if}}
             {{/if}}
             <div>Damage: <span class="damage-formula-roll" data-formula="{{damage}}" data-actor-id="{{data.actor.id}}" data-damage-source="{{damageSource}}">{{damage}}</span></div>

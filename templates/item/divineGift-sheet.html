@@ -14,13 +14,14 @@
                         </div>
                         <div>
                             <label for="word">Word:</label>
-                            <select id="word" name="data.word">
+                            <input id="word" name="data.word" type="text" value="{{data.data.word}}" />
+                            <!-- OLD <select id="word" name="data.word">
                                 {{#select data.data.word}}
                                 {{#each actorBoundWordNames as |wordName i|}}
                                     <option value="{{wordName}}">{{wordName}}</option>
                                 {{/each}}
                                 {{/select}}
-                            </select>
+                            </select> -->
                         </div>
                         <div>
                             <label for="description">Description:</label>

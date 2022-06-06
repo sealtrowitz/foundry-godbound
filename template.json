@@ -11,7 +11,8 @@
       "level": 1,
       "xp": 0,
       "hp": {
-        "current": 0,
+        "value": 0,
+        "max": 1,
         "bonus": 0
       },
       "attributes": {
@@ -58,7 +59,8 @@
         "penalizeSpirit": false
       },
       "effort": {
-        "total": 0,
+        "max": 0,
+        "value": 0,
         "atWill": 0,
         "scene": 0,
         "day": 0
@@ -86,14 +88,15 @@
       "morale": 9,
       "ac": 10,
       "hd": {
-        "current": 0,
+        "value": 0,
         "max": 0
       },
       "numActions": 1,
       "numAttacks": 1,
       "toHitBonus": 0,
       "effort": {
-        "total": 0,
+        "max": 0,
+        "value": 0,
         "atWill": 0,
         "scene": 0,
         "day": 0
@@ -106,7 +109,6 @@
   "Item": {
     "types": [
       "autoHitAttack",
-      "multiDieDamageRoll",
       "attack",
       "project",
       "item",
@@ -124,10 +126,6 @@
       "damageRoll": "1d8",
       "damageBonus": 0,
       "magic": false
-    },
-    "multiDieDamageRoll": {
-      "damageRoll": "1d8",
-      "damageBonus": 0
     },
     "attack": {
       "attr": "str",

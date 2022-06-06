@@ -178,7 +178,7 @@ async function createGodboundMacro(data, slot) {
             type: "script",
             img: item.img,
             command: command,
-            flags: { "boilerplate.itemMacro": true }
+            flags: { "godbound.itemMacro": true }
         });
     }
     game.user.assignHotbarMacro(macro, slot);

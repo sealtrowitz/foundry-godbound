@@ -1,6 +1,6 @@
-game.actors.entries.forEach(a => {
+game.actors.forEach(a => {
     a.resetDay();
 });
 ChatMessage.create({
-    content: `<div><h3>Day Advanced</h3><p>Effort reclaimed and artifacts unbound.</p></div>`,
+    content: `<div><h3>Day Advanced</h3><p>All Day and Scene Effort reclaimed and all artifacts unbound for all actors.</p></div>`,
 });

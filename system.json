@@ -1,18 +1,517 @@
 {
   "name": "godbound",
   "title": "Godbound",
-  "description": "Godbound",
-  "version": 0.1,
-  "minimumCoreVersion": "0.5.6",
-  "compatibleCoreVersion": "0.7.7",
+  "description": "A Godbound system for Foundry VTT.",
+  "version": 0.82,
+  "minimumCoreVersion": "9.269",
+  "compatibleCoreVersion": "9.269",
   "templateVersion": 2,
-  "author": "jasonwocky",
+  "author": "jasonwocky (updated for v9 by salem)",
   "esmodules": ["module/gb.js"],
   "styles": ["styles/gb.css"],
-  "packs": [],
+  "packs": [
+    {
+    "name": "alacrity-gifts",
+    "label": "Alacrity Gifts",
+    "path": "./packs/alacrity-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "apotheosis-gifts",
+    "label": "Apotheosis Gifts",
+    "path": "./packs/apotheosis-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "artifice-gifts",
+    "label": "Artifice Gifts",
+    "path": "./packs/artifice-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "artificial-intelligence-gifts",
+    "label": "Artificial Intelligence Gifts",
+    "path": "./packs/artificial-intelligence-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "attacks-from-gifts",
+    "label": "Attacks from Gifts",
+    "path": "./packs/attacks-from-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "beasts-gifts",
+    "label": "Beasts Gifts",
+    "path": "./packs/beasts-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "birds-gifts",
+    "label": "Birds Gifts",
+    "path": "./packs/birds-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "bow-gifts",
+    "label": "Bow Gifts",
+    "path": "./packs/bow-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "cities-gifts",
+    "label": "Cities Gifts",
+    "path": "./packs/cities-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "command-gifts",
+    "label": "Command Gifts",
+    "path": "./packs/command-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "dance-gifts",
+    "label": "Dance Gifts",
+    "path": "./packs/dance-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "death-gifts",
+    "label": "Death Gifts",
+    "path": "./packs/death-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "deception-gifts",
+    "label": "Deception Gifts",
+    "path": "./packs/deception-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "desert-gifts",
+    "label": "Desert Gifts",
+    "path": "./packs/desert-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "desire-gifts",
+    "label": "Desire Gifts",
+    "path": "./packs/desire-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "dragon-gifts",
+    "label": "Dragon Gifts",
+    "path": "./packs/dragon-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "earth-gifts",
+    "label": "Earth Gifts",
+    "path": "./packs/earth-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "endurance-gifts",
+    "label": "Endurance Gifts",
+    "path": "./packs/endurance-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "engineering-gifts",
+    "label": "Engineering Gifts",
+    "path": "./packs/engineering-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "entropy-gifts",
+    "label": "Entropy Gifts",
+    "path": "./packs/entropy-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "faerie-queen-gifts",
+    "label": "Faerie Queen Gifts",
+    "path": "./packs/faerie-queen-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "fate-gifts",
+    "label": "Fate Gifts",
+    "path": "./packs/fate-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "fear-gifts",
+    "label": "Fear Gifts",
+    "path": "./packs/fear-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "fertility-gifts",
+    "label": "Fertility Gifts",
+    "path": "./packs/fertility-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "fire-gifts",
+    "label": "Fire Gifts",
+    "path": "./packs/fire-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "health-gifts",
+    "label": "Health Gifts",
+    "path": "./packs/health-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "insects-gifts",
+    "label": "Insects Gifts",
+    "path": "./packs/insects-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "intoxication-gifts",
+    "label": "Intoxication Gifts",
+    "path": "./packs/intoxication-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "invocations-of-the-gate",
+    "label": "Invocations of the Gate",
+    "path": "./packs/invocations-of-the-gate.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "invocations-of-the-throne",
+    "label": "Invocations of the Throne",
+    "path": "./packs/invocations-of-the-throne.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "invocations-of-the-way",
+    "label": "Invocations of the Way",
+    "path": "./packs/invocations-of-the-wau.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "journeying-gifts",
+    "label": "Journeying Gifts",
+    "path": "./packs/journeying-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "jungle-gifts",
+    "label": "Jungle Gifts",
+    "path": "./packs/jungle-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "knowledge-gifts",
+    "label": "Knowledge Gifts",
+    "path": "./packs/knowledge-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "lich-king-gifts",
+    "label": "Lich King Gifts",
+    "path": "./packs/lich-king-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "luck-gifts",
+    "label": "Luck Gifts",
+    "path": "./packs/luck-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "madness-gifts",
+    "label": "Madness Gifts",
+    "path": "./packs/madness-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "martyrdom-gifts",
+    "label": "Martyrdom Gifts",
+    "path": "./packs/martyrdom-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "might-gifts",
+    "label": "Might Gifts",
+    "path": "./packs/might-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "murder-gifts",
+    "label": "Murder Gifts",
+    "path": "./packs/murder-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "music-gifts",
+    "label": "Music Gifts",
+    "path": "./packs/music-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "network-gifts",
+    "label": "Network Gifts",
+    "path": "./packs/network-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "night-gifts",
+    "label": "Night Gifts",
+    "path": "./packs/night-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "passion-gifts",
+    "label": "Passion Gifts",
+    "path": "./packs/passion-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "peak-human-gifts",
+    "label": "Peak Human Gifts",
+    "path": "./packs/peak-human-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "protection-gifts",
+    "label": "Protection Gifts",
+    "path": "./packs/protection-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "sea-gifts",
+    "label": "Sea Gifts",
+    "path": "./packs/sea-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "shapeshifting-gifts",
+    "label": "Shapeshifting Gifts",
+    "path": "./packs/shapeshifting-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "sky-gifts",
+    "label": "Sky Gifts",
+    "path": "./packs/sky-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "sorcery-gifts",
+    "label": "Sorcery Gifts",
+    "path": "./packs/sorcery-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "sun-gifts",
+    "label": "Sun Gifts",
+    "path": "./packs/sun-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "sword-gifts",
+    "label": "Sword Gifts",
+    "path": "./packs/sword-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "theft-gifts",
+    "label": "Theft Gifts",
+    "path": "./packs/theft-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "time-gifts",
+    "label": "Time Gifts",
+    "path": "./packs/time-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "underworld-gifts",
+    "label": "Underworld Gifts",
+    "path": "./packs/underworld-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "universal-gifts",
+    "label": "Universal Gifts",
+    "path": "./packs/universal-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "vengeance-gifts",
+    "label": "Vengeance Gifts",
+    "path": "./packs/vengeance-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "war-gifts",
+    "label": "War Gifts",
+    "path": "./packs/war-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "wealth-gifts",
+    "label": "Wealth Gifts",
+    "path": "./packs/wealth-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "winter-gifts",
+    "label": "Winter Gifts",
+    "path": "./packs/winter-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "words",
+    "label": "Words",
+    "path": "./packs/words.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "godbound-macros",
+    "label": "Godbound Macros",
+    "path": "./packs/godbound-macros.db",
+    "type": "Macro",
+    "entity": "Macro"
+  }
+],
   "languages": [],
   "gridDistance": 5,
   "gridUnits": "ft",
   "primaryTokenAttribute": "hp",
-  "secondaryTokenAttribute": "effort"
+  "secondaryTokenAttribute": "effort",
+  "url": "https://github.com/sealtrowitz/foundry-godbound",
+  "manifest": "https://github.com/sealtrowitz/foundry-godbound/releases/latest/download/system.json",
+  "download": "https://github.com/sealtrowitz/foundry-godbound/releases/download/v0.82/godbound-v0.82.zip"
 }

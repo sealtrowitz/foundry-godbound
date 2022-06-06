@@ -19,8 +19,10 @@ export class PlayerRollDialog extends Dialog {
                     label: `Roll`,
                     callback: (html) => {
                         let modifier = SafeNum(html.find('#modifier').val());
+                        let factModifier = SafeNum(html.find('#factModifier').val());
                         onComplete(Object.assign({}, opts, {
-                            modifier
+                            modifier,
+                            factModifier
                         }));
                     }
                 },

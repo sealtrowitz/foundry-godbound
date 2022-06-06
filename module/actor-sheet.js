@@ -103,13 +103,13 @@ export class GodboundActorSheet extends ActorSheet {
 
     html.find('.itemAdder').click(async ev => {
       const $i = $(ev.currentTarget);
-      this.actor.createOwnedItem({name: TypeNames($i.data('itemType')), type: $i.data('itemType')}, {renderSheet: true});
+      this.actor.createEmbeddedDocuments("Item", [{name: TypeNames($i.data('itemType')), type: $i.data('itemType')}], {renderSheet: true});
     });
 
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
-      this.actor.deleteOwnedItem(li.data("itemId"));
+      this.actor.deleteEmbeddedDocuments("Item", [li.data("itemId")]);
       li.slideUp(200, () => this.render(false));
     });
 
@@ -141,12 +141,13 @@ export class GodboundActorSheet extends ActorSheet {
           details: `${Capitalize(attr)} - ${data.modifier < 0 ? 'Hard' : data.modifier > 0 ? 'Easy' : 'Normal'}`,
           data: data,
         }
-        let roll = new Roll('1d20 + @attr + @difficulty', {
+        let roll = new Roll('1d20 + @difficulty + @factModifier', {
           attr: this.actor.data.data.attributes[attr].score,
           difficulty: data.modifier,
+          factModifier: data.factModifier,
         });
-        roll.roll();
-        let target = 21;
+        roll.roll({async:false});
+        let target = 21 - this.actor.data.data.attributes[attr].score;
         let result = {
           isSuccess: roll.total >= target,
           isFailure: roll.total < target,
@@ -192,9 +193,9 @@ export class GodboundActorSheet extends ActorSheet {
       this.actor.rollDamage(item)
     });
 
-    html.find('.save-roll').click(ev => {
+     html.find('.save-roll').click(ev => {
       let save = $(ev.currentTarget).data('save');
-      PlayerRollDialog.create(this.actor, {rollType: `${Capitalize(save)} save`}, async (data) => {
+     PlayerRollDialog.create(this.actor, {rollType: `${Capitalize(save)} save`}, async (data) => {
         let template = 'systems/godbound/templates/chat/saving-throw-result.html';
         let chatData = {
           user: game.user.id,
@@ -212,7 +213,7 @@ export class GodboundActorSheet extends ActorSheet {
         let roll = new Roll('1d20 + @difficulty', {
           difficulty: data.modifier,
         });
-        roll.roll();
+        roll.roll({async:false});
         let target = this.actor.data.data.computed.saves[save].save;
         let result = {
           isSuccess: roll.total >= target,
@@ -328,7 +329,7 @@ export class GodboundActorSheet extends ActorSheet {
             attr: attrValue,
           });
         }
-        roll.roll();
+        roll.roll({async:false});
 
         let target = 9;
         let result = {
@@ -392,7 +393,7 @@ export class GodboundActorSheet extends ActorSheet {
         roll = new Roll('4d6dh', {
         });
       }
-      roll.roll();
+      roll.roll({async:false});
 
       let result = {
       }
@@ -448,7 +449,7 @@ export class GodboundActorSheet extends ActorSheet {
         roll = new Roll('4d6dh', {
         });
       }
-      roll.roll();
+      roll.roll({async:false});
 
       let result = {
       }

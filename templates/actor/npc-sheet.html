@@ -27,7 +27,7 @@
                         </div>
                         <div>
                             <label for="hdCurrent">HD:</label>
-                            <input id="hdCurrent" type="text" name="data.hd.current" value="{{data.data.hd.current}}" data-dtype="Number" />
+                            <input id="hdCurrent" type="text" name="data.hd.value" value="{{data.data.hd.value}}" data-dtype="Number" />
                         </div>
                         <div>
                             <label for="hdMax">Max:</label>
@@ -91,9 +91,9 @@
                     <tbody>
                     <tr>
                         <td>Effort</td>
-                        <td><input type="text" data-dtype="Number" name="data.effort.total" value="{{data.data.effort.total}}" /></td>
+                        <td><input type="text" data-dtype="Number" name="data.effort.max" value="{{data.data.effort.max}}" /></td>
                         <td>{{data.data.computed.effort.spent}}</td>
-                        <td>{{data.data.computed.effort.available}}</td>
+                        <td>{{data.data.computed.effort.value}}</td>
                         <td></td>
                     </tr>
                     </tbody>
@@ -293,10 +293,10 @@
                             {{/ifeq}}
                             {{/each}}
                         </ol>
-                        <div>
+                       <!-- commenting this part out in case we need it later <div>
                             <label for="toHitBonus">To Hit Bonus:</label>
                             <input id="toHitBonus" name="data.toHitBonus" value="{{data.data.toHitBonus}}" type="text" data-dtype="Number" class="compact" style="margin-left:8px;" />
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="container col" style="margin-top:32px;">
@@ -335,7 +335,7 @@
                         </h2>
                         <div style="display:flex;justify-content: space-between;margin:0;">
                             <h3>
-                                HD: {{actor.data.data.hd.current}}
+                                HD: {{actor.data.data.hd.value}}
                             </h3>
                             <div>
                                 <input class="compact" id="hdadjust" />
@@ -418,7 +418,7 @@
                             {{/ifcombatpower}}
                             {{/each}}
                         </ol>
-                        <h3>Free Effort: {{data.data.computed.effort.available}}</h3>
+                        <h3>Free Effort: {{data.data.computed.effort.value}}</h3>
                     </div>
 
                     <div class="container col" style="margin-top: 32px;">

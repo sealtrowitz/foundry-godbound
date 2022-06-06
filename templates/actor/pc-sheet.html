@@ -152,7 +152,7 @@
                                 <tbody>
                                 <tr>
                                     <td style="width:30%">Current HP</td>
-                                    <td style="width:20%"><input type="text" name="data.hp.current" value="{{data.data.hp.current}}" data-dtype="Number" /></td>
+                                    <td style="width:20%"><input type="text" name="data.hp.value" value="{{data.data.hp.value}}" data-dtype="Number" /></td>
                                     <td style="width:10%">AC</td>
                                     <td>{{data.data.computed.armor.ac}}</td>
                                 </tr>
@@ -189,9 +189,9 @@
                     <tbody>
                         <tr>
                             <td>Effort</td>
-                            <td><input type="text" data-dtype="Number" name="data.effort.total" value="{{data.data.effort.total}}" /></td>
+                            <td><input type="text" data-dtype="Number" name="data.effort.max" value="{{data.data.effort.max}}" /></td>
                             <td>{{data.data.computed.effort.spent}}</td>
-                            <td>{{data.data.computed.effort.available}}</td>
+                            <td>{{data.data.computed.effort.value}}</td>
                             <td></td>
                         </tr>
                         <tr>
@@ -435,10 +435,10 @@
                             {{/ifeq}}
                             {{/each}}
                         </ol>
-                        <div>
+                        <!-- commenting out in case we need later <div>
                             <label for="toHitBonus">To Hit Bonus:</label>
                             <input id="toHitBonus" name="data.toHitBonus" value="{{data.data.toHitBonus}}" type="text" data-dtype="Number" class="compact" style="margin-left:8px;" />
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="container col" style="margin-top:32px;">
@@ -471,16 +471,13 @@
                         </ol>
                     </div>
 
-                    <div class="container col" style="margin-top:32px;">
+                <div class="container col" style="margin-top:32px;">
                         <h2 style="display:flex;justify-content: space-between;">
                             <span>HP</span>
                         </h2>
                         <div style="display:flex;justify-content: space-between">
                             <h3>
-                                HP: {{actor.data.data.hp.current}}
-                                {{#unlesseq actor.data.data.hp.bonus 0}}
-                                ({{actor.data.data.hp.bonus}})
-                                {{/unlesseq}}
+                                HP: {{actor.data.data.hp.value}}
                             </h3>
                             <div>
                                 <input class="compact" id="hpadjust" />
@@ -546,7 +543,7 @@
                         {{/ifcombatpower}}
                         {{/each}}
                     </ol>
-                    <h3>Free Effort: {{data.data.computed.effort.available}}</h3>
+                    <h3>Free Effort: {{data.data.computed.effort.value}}</h3>
                 </div>
 
             </div>
@@ -598,7 +595,7 @@
                     {{#each data.data.computed.artifacts as |artifact id|}}
                     <li class="item flexrow" data-item-id="{{artifact.item.id}}">
                         <h4 class="item-name">
-                            {{artifact.item.name}} (Effort {{artifact.item.data.data.computed.effort.available}})
+                            {{artifact.item.name}} (Effort {{artifact.item.data.data.computed.effort.value}})
                             <span class="item-tags">
                             {{#if artifact.item.data.data.bound}}
                                 Bound
@@ -658,7 +655,7 @@
                     {{/if}}
                     {{/each}}
                 </ol>
-                <h3>Free Effort: {{data.data.computed.effort.available}}</h3>
+                <h3>Free Effort: {{data.data.computed.effort.value}}</h3>
             </div>
         </div>
 

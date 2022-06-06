@@ -119,7 +119,7 @@ export class GodboundItemSheet extends ItemSheet {
         }
       }
       if(this.item.actor) {
-        this.item.actor.deleteOwnedItem(this.item.id);
+        this.item.actor.deleteEmbeddedDocuments("Item", [(this.item.id)]);
       }
     });
 
@@ -133,7 +133,7 @@ export class GodboundItemSheet extends ItemSheet {
         ui.notifications.error("Cannot add powers to an unowned artifact");
         return;
       }
-      this.actor.createOwnedItem({name: TypeNames($i.data('itemType')), type: $i.data('itemType'), data: {artifactId: this.item.id}}, {renderSheet: true});
+      this.actor.createEmbeddedDocuments("Item", [{name: TypeNames($i.data('itemType')), type: $i.data('itemType'), data: {artifactId: this.item.id}}], {renderSheet: true});
     });
 
   }

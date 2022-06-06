@@ -6,34 +6,35 @@ export class GodboundActor extends Actor {
         let gbActor = await super.create(data, options);
 
         if (gbActor.data.type === 'pc') {
-            await gbActor.createOwnedItem({
+            await gbActor.createEmbeddedDocuments("Item", [{
                 name: 'Fray Die', type: 'autoHitAttack',
-                img: 'modules/game-icons-net/blackbackground/sword-spin.svg',
+                img: 'icons/skills/wounds/injury-triple-slash-bleed.webp',
                 data: {
                     numDice: 1,
                     diceType: 8
                 }
-            });
-            await gbActor.createOwnedItem({
+            }]);
+            await gbActor.createEmbeddedDocuments("Item", [{
                 name: 'Succeed on Save', type: 'divineMiracle',
-                img: 'modules/game-icons-net/blackbackground/shield-reflect.svg',
+                img: 'icons/skills/social/intimidation-impressing.webp',
                 data: {
-                    description: "Succeed on a Failed Save",
+                    description: "Expend Effort to automatically succeed on a failed save.",
                     effortCost: 1,
                     instant: true,
                 }
-            });
-            await gbActor.createOwnedItem({
+            }]);
+            await gbActor.createEmbeddedDocuments("Item", [{
                 name: 'Dispel Effect', type: 'divineMiracle',
-                img: 'modules/game-icons-net/blackbackground/halt.svg',
+                img: 'icons/magic/control/debuff-chains-orb-movement-blue.webp',
                 data: {
                     description: "Dispel an appropriate effect, instantly if targeted directly at you.",
                     effortCost: 1,
                     action: true,
                     instant: true,
                 }
-            });
-            await gbActor.createOwnedItem({
+            }]);
+         /* COMMENTING OUT IN CASE WE NEED IT
+            await gbActor.createEmbeddedDocuments("Item", [{
                 name: 'Divine Wrath', type: 'divineMiracle',
                 img: 'modules/game-icons-net/blackbackground/hypersonic-bolt.svg',
                 data: {
@@ -43,18 +44,18 @@ export class GodboundActor extends Actor {
                     action: true,
                     combatPower: true,
                 }
-            });
-            await gbActor.createOwnedItem({
-                name: 'Corona of Fury', type: 'divineMiracle',
+            }]);
+           await gbActor.createEmbeddedDocuments("Item", [{
+               name: 'Corona of Fury', type: 'divineMiracle',
                 img: 'modules/game-icons-net/blackbackground/explosion-rays.svg',
                 data: {
-                    description: "You hurl a torrent of your Word’s energy at a group of foes, affecting all within a 30-foot radius of a target point within sight of you. Each victim takes @RollDmg[halfLeveld8] damage. The fury can selectively spare allies within the area, but the victims then get an appropriate saving throw to resist the effect. You are always immune to the furies of your own bound Words, as are other entities that wield similar powers.",
+                   description: "You hurl a torrent of your Word’s energy at a group of foes, affecting all within a 30-foot radius of a target point within sight of you. Each victim takes @RollDmg[halfLeveld8] damage. The fury can selectively spare allies within the area, but the victims then get an appropriate saving throw to resist the effect. You are always immune to the furies of your own bound Words, as are other entities that wield similar powers.",
                     effortCost: 1,
                     smite: true,
                     action: true,
                     combatPower: true,
                 }
-            });
+            }]);   */
         }
     }
 
@@ -154,14 +155,24 @@ export class GodboundActor extends Actor {
         }
 
         data.computed.effort = {};
-        data.computed.effort.available =
-            data.effort.total - (
+        data.computed.effort.value =
+            data.effort.max - (
                 data.effort.atWill +
                 data.effort.scene +
                 data.effort.day
             )
         ;
-        data.computed.effort.spent = data.effort.total - data.computed.effort.available;
+
+        // testing shit again! :domybest:
+        data.effort.value =
+            data.effort.max - (
+                data.effort.atWill +
+                data.effort.scene +
+                data.effort.day
+            )
+        ;
+
+        data.computed.effort.spent = data.effort.max - data.computed.effort.value;
 
         data.computed.influence = {};
         data.computed.influence.spent = data.influence.contributed;
@@ -184,7 +195,13 @@ export class GodboundActor extends Actor {
         data.computed.dominion.available = data.dominion.total - data.computed.dominion.spent;
 
         data.computed.hp = {};
-        data.computed.hp.max = 8 + data.computed.attributes.con.mod + (
+        data.computed.hp.max = 8 + data.hp.bonus + data.computed.attributes.con.mod + (
+            (data.level - 1) * (4 + Math.ceil(data.computed.attributes.con.mod / 2))
+        );
+
+        // testing shit. sorry if this breaks everything :domybest: (BOWSERPOG IT WORKED)
+
+        data.hp.max = 8 + data.hp.bonus + data.computed.attributes.con.mod + (
             (data.level - 1) * (4 + Math.ceil(data.computed.attributes.con.mod / 2))
         );
 
@@ -240,14 +257,24 @@ export class GodboundActor extends Actor {
         data.computed = {};
 
         data.computed.effort = {};
-        data.computed.effort.available =
-            data.effort.total - (
+        data.computed.effort.value =
+            data.effort.max - (
                 data.effort.atWill +
                 data.effort.scene +
                 data.effort.day
             )
         ;
-        data.computed.effort.spent = data.effort.total - data.computed.effort.available;
+
+                // testing shit again! :domybest:
+                data.effort.value =
+                data.effort.max - (
+                    data.effort.atWill +
+                    data.effort.scene +
+                    data.effort.day
+                )
+            ;
+            
+        data.computed.effort.spent = data.effort.max - data.computed.effort.value;
 
         if(data.numActions > data.numAttacks) {
             data.computed.extraActions = data.numActions - data.numAttacks;
@@ -332,10 +359,10 @@ export class GodboundActor extends Actor {
         };
         let roll = new Roll('1d20 + @attrBonus + @toHitBonus + @itemBonus', {
             attrBonus: attrBonus,
-            toHitBonus: this.data.data.toHitBonus,
+            toHitBonus: this.data.data.level,
             itemBonus: item.data.data.hitBonus
         });
-        roll.roll();
+        roll.roll({async:false});
         templateData.roll = await roll.render();
         let target = null;
         if(game.user.targets.size > 0) {
@@ -398,7 +425,7 @@ export class GodboundActor extends Actor {
             data: {},
         };
         let roll = new Roll(formula);
-        roll.roll();
+        roll.roll({async:false});
         templateData.roll = await roll.render();
         templateData.result = {
             straightDamage: roll.total,
@@ -440,7 +467,7 @@ export class GodboundActor extends Actor {
         };
         let formula = '2d6';
         let roll = new Roll(formula);
-        roll.roll();
+        roll.roll({async:false});
         let target = this.data.data.morale;
         let result = {
             isSuccess: roll.total <= target,
@@ -516,7 +543,7 @@ export class GodboundActor extends Actor {
     }
 
     canSpendEffort(amount) {
-        if(this.data.data.computed.effort.available >= amount) {
+        if(this.data.data.computed.effort.value >= amount) {
             return true;
         } else {
             ui.notifications.warn("Not enough effort");
@@ -644,24 +671,18 @@ export class GodboundActor extends Actor {
 
     async applyDamage(amount) {
         let hpUpdate = {};
-        let bonus = this.data.data.hp.bonus;
-        let current = this.data.data.hp.current;
-        if(bonus > 0) {
-            let damageToBonus = Math.min(amount, bonus);
-            hpUpdate.bonus = bonus - damageToBonus;
-            amount -= damageToBonus;
-        }
+        let value = this.data.data.hp.value;
         if(amount > 0) {
-            hpUpdate.current = current - amount;
+            hpUpdate.value = value - amount;
         }
         await this.update({data: {hp: hpUpdate}});
     }
 
     async applyHDDamage(amount) {
         let hdUpdate = {};
-        let current = this.data.data.hd.current;
+        let value = this.data.data.hd.value;
         if(amount > 0) {
-            hdUpdate.current = current - amount;
+            hdUpdate.value = value - amount;
         }
         await this.update({data: {hd: hdUpdate}});
     }

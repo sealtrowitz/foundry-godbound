@@ -15,7 +15,6 @@ const names = {
     divineMiracle: 'Miracle',
     attack: 'Attack',
     autoHitAttack: 'Attack',
-    multiDieDamageRoll: 'Attack',
     project: 'Project',
     item: 'Item',
     artifact: 'Artifact',

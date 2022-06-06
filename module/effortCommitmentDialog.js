@@ -5,7 +5,7 @@ export class EffortCommitmentDialog extends Dialog {
         let dialogContent = 'systems/godbound/templates/dialogues/effort-commitment-dialog-content.html';
 
         let template = await renderTemplate(dialogContent,
-            Object.assign({name: item.name, description: item.data.data.description}, opts)
+            Object.assign({name: item.name, word: item.data.data.word, description: item.data.data.description}, opts)
         );
         new EffortCommitmentDialog(actor, item, {content: template}, onComplete, opts).render(true);
     }

@@ -1,12 +1,11 @@
 # Godbound Foundry Module
 
-A very incomplete Foundry system module for running Godbound Games
+A very incomplete Foundry system module for running Godbound games.
 
 ## Dependencies
 
 The following modules are recommended
 * PDFoundry
-* game-icons.net
 
 ## TODO
 

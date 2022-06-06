@@ -34,14 +34,14 @@ export class GodboundItem extends Item {
         const data = itemData.data;
         data.computed = {};
         data.computed.effort = {};
-        data.computed.effort.available =
-            data.effort.total - (
+        data.computed.effort.value =
+            data.effort.max - (
                 data.effort.atWill +
                 data.effort.scene +
                 data.effort.day
             )
         ;
-        data.computed.effort.spent = data.effort.total - data.computed.effort.available;
+        data.computed.effort.spent = data.effort.max - data.computed.effort.value;
         data.computed.remaining = data.dominionCost - (data.committedDominion + data.contributedDominion);
     }
 
@@ -66,7 +66,7 @@ export class GodboundItem extends Item {
             ui.notifications.warn("Item is not powered by effort");
             return false;
         }
-        if (this.data.data.computed.effort.available >= amount) {
+        if (this.data.data.computed.effort.value >= amount) {
             return true;
         } else {
             ui.notifications.warn("Not enough effort in item");

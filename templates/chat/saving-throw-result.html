@@ -13,10 +13,10 @@
             <div class="chat-details">{{{flavor}}}</div>
             {{#if roll}}<div>{{{roll}}}</div>{{/if}}
             {{#if result.isFailure}}
-                <div class='roll-result roll-fail'><b>Failure</b> ({{result.target}})</div>
+                <div class='roll-result roll-fail'><b>Failure!</b> (Target was {{result.target}})</div>
             {{/if}}
             {{#if result.isSuccess}}
-                <div class='roll-result roll-success'><b>Success</b>({{result.target}})</div>
+                <div class='roll-result roll-success'><b>Success!</b> (Target was {{result.target}})</div>
             {{/if}}
             {{#if result.isFailure}}
                 <div><span class="instant-auto-save" data-actor-id="{{data.actor.id}}">Auto Save <i class="fas fa-sun"></i></span></div>
