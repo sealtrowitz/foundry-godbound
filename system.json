@@ -2,7 +2,7 @@
   "name": "foundry-godbound",
   "title": "Godbound",
   "description": "A Godbound system for Foundry VTT.",
-  "version": 0.9,
+  "version": 0.84,
   "minimumCoreVersion": "9.269",
   "compatibleCoreVersion": "9.269",
   "templateVersion": 2,
@@ -513,5 +513,5 @@
   "secondaryTokenAttribute": "effort",
   "url": "https://github.com/sealtrowitz/foundry-godbound",
   "manifest": "https://github.com/sealtrowitz/foundry-godbound/releases/latest/download/system.json",
-  "download": "https://github.com/sealtrowitz/foundry-godbound/releases/download/v0.9/godbound-v0.9.zip"
+  "download": "https://github.com/sealtrowitz/foundry-godbound/releases/download/v0.84/godbound-v0.84.zip"
 }
