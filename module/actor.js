@@ -357,25 +357,30 @@ export class GodboundActor extends Actor {
             damageSource: item.id,
             data: {},
         };
-        let roll = new Roll('1d20 + @attrBonus + @toHitBonus + @itemBonus', {
-            attrBonus: attrBonus,
-            toHitBonus: this.data.data.level,
-            itemBonus: item.data.data.hitBonus
-        });
+        let roll = null;
+        if(game.user.targets.size > 0) {
+                let token = game.user.targets.values().next().value;
+                if(token.actor) {
+                    if(token.actor.data.type === 'pc') {
+                        roll = new Roll('1d20 + @attrBonus + @toHitBonus + @itemBonus + @targetAC', {
+                            attrBonus: attrBonus,
+                            toHitBonus: this.data.data.level,
+                            itemBonus: item.data.data.hitBonus,
+                            targetAC: token.actor.data.data.computed.armor.ac
+                    });
+                    } else {
+                        roll = new Roll('1d20 + @attrBonus + @toHitBonus + @itemBonus + @targetAC', {
+                            attrBonus: attrBonus,
+                            toHitBonus: this.data.data.level,
+                            itemBonus: item.data.data.hitBonus,
+                            targetAC: token.actor.data.data.ac
+                    });
+            }}
+            templateData.data.targetToken = token;
+        };
         roll.roll({async:false});
         templateData.roll = await roll.render();
-        let target = null;
-        if(game.user.targets.size > 0) {
-            let token = game.user.targets.values().next().value;
-            if(token.actor) {
-                if(token.actor.data.type === 'pc') {
-                    target = 20 - token.actor.data.data.computed.armor.ac;
-                } else {
-                    target = 20 - token.actor.data.data.ac;
-                }
-            }
-            templateData.data.targetToken = token;
-        }
+        let target = 20
         let isCheckedForSuccess = target !== null;
         templateData.result = {
             total: roll.total,
