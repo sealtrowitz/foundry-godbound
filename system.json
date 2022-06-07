@@ -513,5 +513,5 @@
   "secondaryTokenAttribute": "effort",
   "url": "https://github.com/sealtrowitz/foundry-godbound",
   "manifest": "https://github.com/sealtrowitz/foundry-godbound/releases/latest/download/system.json",
-  "download": "https://github.com/sealtrowitz/foundry-godbound/releases/download/v0.84/godbound-v0.84.zip"
+  "download": "https://github.com/sealtrowitz/foundry-godbound/releases/download/v0.84/foundry-godbound-v0.84.zip"
 }
