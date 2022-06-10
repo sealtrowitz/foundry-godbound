@@ -28,4 +28,5 @@ This package is a fork of [Foundry-Godbound](https://github.com/jasonareid/found
 ## License
 
 This package is licensed under the MIT License.
+\
 This package is licensed under the [Foundry Virtual Tabletop End User License Agreement - Limited License Agreement for Module Development](https://foundryvtt.com/article/license/).
