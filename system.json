@@ -2,7 +2,7 @@
   "name": "godbound",
   "title": "Godbound",
   "description": "A Godbound system for Foundry VTT.",
-  "version": 0.85,
+  "version": 0.86,
   "minimumCoreVersion": "9.269",
   "compatibleCoreVersion": "9.269",
   "templateVersion": 2,
