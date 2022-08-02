@@ -18,7 +18,7 @@ export class GodboundActor extends Actor {
                 name: 'Succeed on Save', type: 'divineMiracle',
                 img: 'icons/skills/social/intimidation-impressing.webp',
                 data: {
-                    description: "Expend Effort to automatically succeed on a failed save.",
+                    description: "Expend Effort for the day to automatically succeed on a failed save.",
                     effortCost: 1,
                     instant: true,
                 }
