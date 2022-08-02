@@ -10,6 +10,7 @@ The following modules are strongly recommended, though not required:
 
 When properly configured, the PDFoundry module allows you to click the PDF icon next to a Gift or Word, opening the PDF to the page of the Gift/Word for reference. Note that this system DOES NOT come with the Godbound PDF, and you must have purchased it yourself in order to upload it via the PDFoundry module. Make sure when you upload your Godbound PDFs to PDFoundry journal entries to use the PDF codes CORE (for the core rule book) and LEXICON (for Lexicon of the Throne). If you would like a copy of the PDF that contains the Jungle and Martyr homebrew words, you may contact me on Discord (sarah#0911) and I will gladly send it to you.
 \
+\
 The Combat Tracker Groups module allows you to appoximate Godbound's initiative system by grouping all PC actors and NPC actors to act on the same 'turn' in combat. I plan on adding a system-specific initiative override eventually, but that's a future project and not a current priority.
 
 ## Incomplete Features
