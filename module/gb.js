@@ -26,11 +26,6 @@ Hooks.once("init", async function () {
         formula: "1d20",
         decimals: 2
     };
-    // Best Left Buried Initiative
-    // CONFIG.Combat.initiative = {
-    //     formula: "1d3+@wit",
-    //     decimals: 2
-    // };
 
     // Define custom Entity classes
     CONFIG.Actor.documentClass = GodboundActor;
@@ -159,7 +154,7 @@ Hooks.once("init", async function () {
     Hooks.on("hotbarDrop", (bar, data, slot) => createGodboundMacro(data, slot));
 
     Hooks.on("renderChatMessage", (message, html, data) => {
-        html.find('.blb-attack .dice-roll .dice-tooltip').css('display', 'block');
+        html.find('.dice-roll .dice-tooltip').css('display', 'block');
     });
 });
 async function createGodboundMacro(data, slot) {
