@@ -8,7 +8,6 @@
     "verified": "10.283",
     "maximum": 10 
   },
-  "templateVersion": 2,
   "authors": [
     {
       "name": "jasonwocky",
@@ -519,7 +518,6 @@
     "type": "Macro"
   }
 ],
-  "languages": [],
   "gridDistance": 5,
   "gridUnits": "ft",
   "primaryTokenAttribute": "hp",
