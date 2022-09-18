@@ -17,7 +17,7 @@
                             <textarea id="description" name="data.description">{{data.data.description}}</textarea>
                         </div>
                         <div>
-                            <label for="deeds">Req. Deeds:</label>
+                            <label for="deeds">Required Deeds:</label>
                             <textarea id="deeds" name="data.deeds">{{data.data.deeds}}</textarea>
                         </div>
                         <div>
@@ -69,27 +69,19 @@
                             </select>
                         </div>
                         <div>
-                            <label>Dom Cost:</label>
+                            <label>Dominion Cost:</label>
                             <span style="padding:4px 0;">{{data.data.computed.cost}}</span>
                         </div>
                         <div>
                             <label>Paid:</label>
                             <div style="display: flex; align-items: center;justify-content: space-around">
-                                <div style="width:25%;text-align:center">
-                                    Dom:
+                                <div style="width:50%;text-align:center">
+                                    Dominion:
                                     <input id="committedDominion" name="data.committedDominion" type="text" value="{{data.data.committedDominion}}" data-dtype="Number" class="compact"/>
                                 </div>
-                                <div style="width:25%;text-align:center">
-                                    DCtrb:
-                                    <input id="contributedDominion" name="data.contributedDominion" type="text" value="{{data.data.contributedDominion}}" data-dtype="Number" class="compact"/>
-                                </div>
-                                <div style="width:25%;text-align:center">
-                                    Inf:
+                                <div style="width:50%;text-align:center">
+                                    Influence:
                                     <input id="committedInfluence" name="data.committedInfluence" type="text" value="{{data.data.committedInfluence}}" data-dtype="Number" class="compact"/>
-                                </div>
-                                <div style="width:25%;text-align:center">
-                                    ICtrb:
-                                    <input id="contributedInfluence" name="data.contributedInfluence" type="text" value="{{data.data.contributedInfluence}}" data-dtype="Number" class="compact"/>
                                 </div>
                             </div>
                         </div>
