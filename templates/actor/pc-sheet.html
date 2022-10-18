@@ -362,11 +362,11 @@
                 </h2>
                 <select name="data.armor.type" id="armorType">
                     {{#select data.data.armor.type}}
-                    <option value="none">None AC 9(skin or clothing)</option>
-                    <option value="light">Light AC 7 (leathers or hides)</option>
-                    <option value="medium">Medium AC 5 (mail or lt plate; -4 to 1 save)</option>
-                    <option value="heavy">Heavy AC 3 (hvy plate; -4 to 2 saves)</option>
-                    <option value="divine">Divine Gift (AC 3)</option>
+                    <option value="none">No armor - AC 9 (skin or clothing)</option>
+                    <option value="light">Light armor - AC 7 (leathers or hides)</option>
+                    <option value="medium">Medium armor - AC 5 (mail or light plate; -4 to 1 save)</option>
+                    <option value="heavy">Heavy armor - AC 3 (heavy plate; -4 to 2 saves)</option>
+                    <option value="divine">Divine Gift - AC 3</option>
                     {{/select}}
                 </select>
                 <div style="display:flex;align-items:center;justify-content: flex-start">
@@ -390,11 +390,11 @@
                     <label  style="margin-left:16px;margin-right:4px;font-weight:bold;" >AC</label> <span style="font-weight:bold">{{data.data.computed.armor.ac}}</span>
 
                     <input id="penalizeHardiness" type="checkbox" name="data.armor.penalizeHardiness" {{checked data.data.armor.penalizeHardiness}} style="margin-left:32px;margin-right:0" />
-                    <label for="penalizeHardiness">-Hardiness</label>
+                    <label for="penalizeHardiness"> -Hardiness</label>
                     <input id="penalizeEvasion" type="checkbox" name="data.armor.penalizeEvasion" {{checked data.data.armor.penalizeEvasion}} style="margin-left:16px;margin-right:0" />
-                    <label for="penalizeEvasion">-Evasion</label>
+                    <label for="penalizeEvasion"> -Evasion</label>
                     <input id="penalizeSpirit" type="checkbox" name="data.armor.penalizeSpirit" {{checked data.data.armor.penalizeSpirit}} style="margin-left:16px;margin-right:0" />
-                    <label for="penalizeSpirit">-Spirit</label>
+                    <label for="penalizeSpirit"> -Spirit</label>
 
                 </div>
             </div>
