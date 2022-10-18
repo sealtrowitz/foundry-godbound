@@ -493,9 +493,9 @@ export class GodboundActor extends Actor {
     async demonstrateDoc(item) {
         let pdfCode = item.data.data.pdfCode;
         let pdfPage = item.data.data.pdfPage;
-        if(ui && ui.PDFoundry && pdfCode && pdfPage) {
-            ui.PDFoundry.openPDFByCode(pdfCode, {page: pdfPage});
-        }
+        if(ui && ui.pdfpager && pdfCode && pdfPage) {
+            ui.pdfpager.openPDFByCode(pdfCode, {page: pdfPage});
+        } 
     }
 
     async demonstratePower(item, effortCommitment) {
