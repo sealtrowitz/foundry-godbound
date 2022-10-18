@@ -46,20 +46,16 @@
                         <div>
                             <label>Dominion:</label>
                             <div style="display: flex; align-items: center;justify-content: space-around">
-                                <div style="width:22%;text-align: right;">
+                                <div style="width:33%;text-align: right;">
                                     Cost:
                                     <input id="dominionCost" name="data.dominionCost" type="text" value="{{data.data.dominionCost}}" data-dtype="Number" class="compact"/>
                                 </div>
-                                <div style="width:25%;text-align: right;">
+                                <div style="width:33%;text-align: right;">
                                     Paid:
                                     <input id="committedDominion" name="data.committedDominion" type="text" value="{{data.data.committedDominion}}" data-dtype="Number" class="compact"/>
                                 </div>
-                                <div style="width:28%;text-align: right;">
-                                    Ctrb:
-                                    <input id="contributedDominion" name="data.contributedDominion" type="text" value="{{data.data.contributedDominion}}" data-dtype="Number" class="compact"/>
-                                </div>
-                                <div style="width:22%;text-align: right;padding-right:8px;">
-                                    <label>Rem: {{data.data.computed.remaining}}</label>
+                                <div style="width:33%;text-align: right;padding-right:8px;">
+                                    <label>Remaining: {{data.data.computed.remaining}}</label>
                                 </div>
                             </div>
                         </div>
