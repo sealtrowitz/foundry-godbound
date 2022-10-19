@@ -2,7 +2,7 @@
   "name": "godbound",
   "title": "Godbound",
   "description": "A Godbound system for Foundry VTT.",
-  "version": 0.89,
+  "version": 0.90,
   "minimumCoreVersion": "9.280",
   "compatibleCoreVersion": "9.280",
   "templateVersion": 2,
@@ -427,6 +427,70 @@
   },
 
   {
+    "name": "techniques-of-the-bitter-rival",
+    "label": "Techniques of the Bitter Rival",
+    "path": "./packs/techniques-of-the-bitter-rival.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "techniques-of-the-broken-earth",
+    "label": "Techniques of the Broken Earth",
+    "path": "./packs/techniques-of-the-broken-earth.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "techniques-of-the-consuming-flame",
+    "label": "Techniques of the Consuming Flame",
+    "path": "./packs/techniques-of-the-consuming-flame.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "techniques-of-the-drowning-tide",
+    "label": "Techniques of the Drowning Tide",
+    "path": "./packs/techniques-of-the-drowning-tide.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "techniques-of-the-dying-hour",
+    "label": "Techniques of the Dying Hour",
+    "path": "./packs/techniques-of-the-dying-hour.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "techniques-of-the-falling-sky",
+    "label": "Techniques of the Falling Sky",
+    "path": "./packs/techniques-of-the-falling-sky.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "techniques-of-the-hunting-beast",
+    "label": "Techniques of the Hunting Beast",
+    "path": "./packs/techniques-of-the-hunting-beast.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "techniques-of-the-scorned-lover",
+    "label": "Techniques of the Scorned Lover",
+    "path": "./packs/techniques-of-the-scorned-lover.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
     "name": "theft-gifts",
     "label": "Theft Gifts",
     "path": "./packs/theft-gifts.db",
@@ -438,6 +502,14 @@
     "name": "time-gifts",
     "label": "Time Gifts",
     "path": "./packs/time-gifts.db",
+    "type": "Item",
+    "entity": "Item"
+  },
+
+  {
+    "name": "true-strifes",
+    "label": "True Strifes",
+    "path": "./packs/true-strifes.db",
     "type": "Item",
     "entity": "Item"
   },
@@ -513,5 +585,5 @@
   "secondaryTokenAttribute": "effort",
   "url": "https://github.com/sealtrowitz/foundry-godbound",
   "manifest": "https://github.com/sealtrowitz/foundry-godbound/releases/latest/download/system.json",
-  "download": "https://github.com/sealtrowitz/foundry-godbound/releases/download/v0.89/foundry-godbound-v0.89.zip"
+  "download": "https://github.com/sealtrowitz/foundry-godbound/releases/download/v0.90/foundry-godbound-v0.90.zip"
 }
