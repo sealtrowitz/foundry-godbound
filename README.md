@@ -13,10 +13,13 @@ When properly configured, the PDFoundry module allows you to click the PDF icon 
 \
 The Combat Tracker Groups module allows you to appoximate Godbound's initiative system by grouping all PC actors and NPC actors to act on the same 'turn' in combat. I plan on adding a system-specific initiative override eventually, but that's a future project and not a current priority.
 
+## Manifest URL
+
+https://github.com/sealtrowitz/foundry-godbound/releases/latest/download/system.json
+
 ## Incomplete Features
 
 The following features are not mechanically supported by this system at this time:
-* Strifes
 * Low magic
 * Damage automation
 * Initiative (as written in the core book)
