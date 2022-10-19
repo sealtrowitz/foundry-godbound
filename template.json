@@ -108,21 +108,21 @@
   },
   "Item": {
     "types": [
-      "autoHitAttack",
-      "attack",
-      "project",
-      "item",
-      "boundWord",
-      "divineGift",
-      "divineMiracle",
       "artifact",
       "artifactPower",
-      "treasure",
+      "attack",
+      "autoHitAttack",
+      "boundWord",
+      "cult",
+      "divineGift",
+      "divineMiracle",
       "invocation",
-      "tactic",
-      "trueStrife",
+      "item",
+      "project",
       "strifeTechnique",
-      "cult"
+      "tactic",
+      "treasure",
+      "trueStrife"
     ],
     "autoHitAttack": {
       "damageRoll": "1d8",

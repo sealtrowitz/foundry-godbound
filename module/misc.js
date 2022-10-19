@@ -24,7 +24,7 @@ const names = {
     tactic: 'Tactic',
     artifactPower: 'Artifact Power',
     trueStrife: 'True Strife',
-    strifeTechnique: 'Strife Technique'
+    strifeTechnique: 'Strife Technique',
 }
 
 export const TypeNames = (type) => {
