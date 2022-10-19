@@ -140,9 +140,10 @@
 
   .tabs {
     position: absolute;
-    transform: rotate(90deg);
-    top: 325px;
-    right: -310px;
+    transform-origin: 100% 50%;
+    margin-top: 50%;
+    top: 546px;
+    right: -11px;
     z-index: -1;
 
     .item {
@@ -161,6 +162,17 @@
       filter: brightness(1);
       z-index: 10;
     }
+
+    .item.tab-title { 
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    .item.tab-title-npc { 
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    
   }
   .artifact {
     .tabs {
