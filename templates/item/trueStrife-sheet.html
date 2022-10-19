@@ -3,7 +3,7 @@
     <section class="sheet-body">
         <div class="tab attrs active" data-group="primary" data-tab="attrs">
             <div class="container col">
-                <h2>Invocation</h2>
+                <h2>True Strife</h2>
                 <div class="container row sheet-header">
                     <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="100"
                          width="100"/>
@@ -13,20 +13,23 @@
                             <input id="name" name="name" type="text" value="{{item.name}}"/>
                         </div>
                         <div>
-                            <label for="theurgy">Theurgy:</label>
-                            <input id="theurgy" name="data.theurgy" type="text" value="{{data.data.theurgy}}" />
-                        </div>
-                        <div>
                             <label for="description">Description:</label>
                             <textarea id="description" name="data.description" class="xtall">{{data.data.description}}</textarea>
                         </div>
                         <div>
-                            <label>Cast Time:</label>
-                            <div style="display: flex; align-items: center">
-                                <input type="checkbox" name="data.noEffort" {{checked data.data.noEffort}} style="margin-left:0" />Slowly (1 hour)
-                                <input type="checkbox" name="data.scene" {{checked data.data.scene}} />Quickly (1 round)
-                                <input type="checkbox" name="data.day" {{checked data.data.day}} />Instantly
-                            </div>
+                            <label for="pdfCode">PDF:</label>
+                            <select id="pdfCode" name="data.pdfCode">
+                                {{#select data.data.pdfCode}}
+                                <option value="CORE">Core Rulebook</option>
+                                <option value="LEXICON">Lexicon of the Throne</option>
+                                <option value="HOMEBREW">Homebrew Words</option>
+                                {{/select}}
+                            </select>
+                        </div>
+                        <div>
+                            <label for="pdfPage">Page:</label>
+                            <input id="pdfPage" name="data.pdfPage" type="text" value="{{data.data.pdfPage}}"
+                                   data-dtype="Number"/>
                         </div>
                         <div>
                             <label style="vertical-align: center">Actions:</label>
@@ -35,7 +38,6 @@
                                 <a class="item-control item-maybe-delete" title="Maybe Delete"><i class="fas fa-trash"></i></a>
                                 <a class="item-control item-delete" title="Delete" style="color:red;margin-left:16px;display:none;"><i class="fas fa-trash"></i></a>
                             </div>
-
                         </div>
                     </div>
                 </div>

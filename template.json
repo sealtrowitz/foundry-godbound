@@ -120,6 +120,8 @@
       "treasure",
       "invocation",
       "tactic",
+      "trueStrife",
+      "strifeTechnique",
       "cult"
     ],
     "autoHitAttack": {
@@ -218,9 +220,33 @@
       "description": "",
       "value": 0
     },
-    "invocation": {
+    "trueStrife": {
       "description": "",
-      "level": ""
+      "pdfCode": "",
+      "pdfPage": 1
+    },
+    "invocation": {
+      "theurgy": "",
+      "noEffort": true,
+      "scene": true,
+      "day": true
+    },
+    "strifeTechnique": {
+      "trueStrife": "",
+      "description": "",
+      "lesser": false,
+      "entrance": false,
+      "finishing": false,
+      "constant": false,
+      "instant": false,
+      "onTurn": false,
+      "action": false,
+      "smite": false,
+      "noEffort": false,
+      "atWill": false,
+      "scene": false,
+      "day": false,
+      "combatPower": false
     },
     "tactic": {
       "description": ""

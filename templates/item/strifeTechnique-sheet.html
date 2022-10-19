@@ -1,0 +1,71 @@
+<form class="{{cssClass}}" autocomplete="off">
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        <div class="tab attrs active" data-group="primary" data-tab="attrs">
+            <div class="container col">
+                <h2>Technique</h2>
+                <div class="container row sheet-header">
+                    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="100"
+                         width="100"/>
+                    <div class="header-fields tabular">
+                        <div>
+                            <label for="name">Name:</label>
+                            <input id="name" name="name" type="text" value="{{item.name}}"/>
+                        </div>
+                        <div>
+                            <label for="trueStrife">True Strife:</label>
+                            <input id="trueStrife" name="data.trueStrife" type="text" value="{{data.data.trueStrife}}" />
+                        </div>
+                        <div>
+                            <label for="description">Description:</label>
+                            <textarea id="description" name="data.description" class="xtall">{{data.data.description}}</textarea>
+                        </div>
+                        <div>
+                            <label></label>
+                            <div style="display:flex; align-items: center">
+                                <input type="checkbox" name="data.lesser" {{checked data.data.lesser}} style="margin-left:0" />Lesser Strife
+                                <input type="checkbox" name="data.entrance" {{checked data.data.entrance}} style="margin-left:0" />Entrance Technique
+                                <input type="checkbox" name="data.finishing" {{checked data.data.finishing}} style="margin-left:0" />Finishing Technique
+                            
+                            </div>
+                        </div>
+                        <div>
+                            <label>Activation:</label>
+                            <div style="display: flex; align-items: center">
+                                <input type="checkbox" name="data.constant" {{checked data.data.constant}} style="margin-left:0" />Constant
+                                <input type="checkbox" name="data.instant" {{checked data.data.instant}} />Instant
+                                <input type="checkbox" name="data.onTurn" {{checked data.data.onTurn}} />On Turn
+                                <input type="checkbox" name="data.action" {{checked data.data.action}} />Action
+                            </div>
+                        </div>
+                        <div>
+                            <label>Effort:</label>
+                            <div style="display: flex; align-items: center">
+                                <input type="checkbox" name="data.noEffort" {{checked data.data.noEffort}} style="margin-left:0" />None
+                                <input type="checkbox" name="data.atWill" {{checked data.data.atWill}} />At Will
+                                <input type="checkbox" name="data.scene" {{checked data.data.scene}} />Scene
+                                <input type="checkbox" name="data.day" {{checked data.data.day}} />Day
+                            </div>
+                        </div>
+                        <div>
+                            <label></label>
+                            <div style="display: flex; align-items: center">
+                                <input type="checkbox" name="data.combatPower" {{checked data.data.combatPower}} style="margin-left:0" />Combat Power
+                                <input type="checkbox" name="data.smite" {{checked data.data.smite}} style="margin-left:16px;" />Smite
+                            </div>
+                        </div>
+                        <div>
+                            <label style="vertical-align: center">Actions:</label>
+                            <div class="item-controls" style="padding-top:4px;">
+                                <a class="item-control item-chat" title="Chat Effect"><i class="fas fa-comment"></i></a>
+                                <a class="item-control item-maybe-delete" title="Maybe Delete"><i class="fas fa-trash"></i></a>
+                                <a class="item-control item-delete" title="Delete" style="color:red;margin-left:16px;display:none;"><i class="fas fa-trash"></i></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>

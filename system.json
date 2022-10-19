@@ -253,7 +253,7 @@
   {
     "name": "invocations-of-the-way",
     "label": "Invocations of the Way",
-    "path": "./packs/invocations-of-the-wau.db",
+    "path": "./packs/invocations-of-the-way.db",
     "type": "Item",
     "entity": "Item"
   },

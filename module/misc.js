@@ -23,6 +23,8 @@ const names = {
     cult: 'Cult',
     tactic: 'Tactic',
     artifactPower: 'Artifact Power',
+    trueStrife: 'True Strife',
+    strifeTechnique: 'Strife Technique'
 }
 
 export const TypeNames = (type) => {
